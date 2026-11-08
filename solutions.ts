@@ -39,3 +39,56 @@ console.log(concatenateArrays([1, 2], [3, 4], [5]));
 
 
 
+
+
+
+
+
+
+
+
+
+ interface Course {
+  title: string;
+  students: number;
+  isPublished: boolean;
+}
+
+function getPopularCourses(courses: Course[], minStudents: number): Course[] {
+  return courses.filter((course: Course) => course.isPublished && course.students >= minStudents);
+}
+
+
+
+const courses: Course[] = [
+  { title: "TypeScript Mastery", students: 120, isPublished: true },
+  { title: "Draft Course", students: 200, isPublished: false },
+  { title: "Basic HTML", students: 45, isPublished: true },
+  { title: "Next.js Pro", students: 85, isPublished: true }
+];
+
+console.log(getPopularCourses(courses, 80));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function pluckValues<T, K extends keyof T>(items: T[], key: K): T[K][] {
+  return items.map((item: T) => item[key]);
+}
+
+
+

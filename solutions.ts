@@ -33,9 +33,6 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
   return arrays.flat();
 }
 
-console.log(concatenateArrays(["a", "b"], ["c", "d"]));
-
-console.log(concatenateArrays([1, 2], [3, 4], [5]));
 
 
 
@@ -48,7 +45,8 @@ console.log(concatenateArrays([1, 2], [3, 4], [5]));
 
 
 
- interface Course {
+
+interface Course {
   title: string;
   students: number;
   isPublished: boolean;
@@ -60,14 +58,6 @@ function getPopularCourses(courses: Course[], minStudents: number): Course[] {
 
 
 
-const courses: Course[] = [
-  { title: "TypeScript Mastery", students: 120, isPublished: true },
-  { title: "Draft Course", students: 200, isPublished: false },
-  { title: "Basic HTML", students: 45, isPublished: true },
-  { title: "Next.js Pro", students: 85, isPublished: true }
-];
-
-console.log(getPopularCourses(courses, 80));
 
 
 

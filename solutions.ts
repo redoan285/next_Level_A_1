@@ -92,3 +92,62 @@ function pluckValues<T, K extends keyof T>(items: T[], key: K): T[K][] {
 
 
 
+
+
+
+
+
+
+
+
+
+
+class Employee {
+  protected name: string;
+  private baseSalary: number;
+
+  public constructor(name: string, baseSalary: number) {
+    this.name = name;
+    this.baseSalary = baseSalary;
+  }
+
+  public getDetails(): string {
+    return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`;
+  }
+}
+
+ class Manager extends Employee {
+  private department: string;
+
+  public constructor(name: string, baseSalary: number, department: string) {
+    super(name, baseSalary);
+    this.department = department;
+  }
+
+  public getRoleInfo(): string {
+    return `Manager of ${this.department}: ${this.name}`;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+function validateAgeAsync(age: number): Promise<string> {
+  return new Promise((resolve, reject) => {
+    if (age >= 18) {
+      setTimeout(() => {
+        resolve("Access Granted");
+      }, 1000);
+    } else {
+      reject(new Error("Access Denied: Must be 18 or older"));
+    }
+  });
+}
+
+
